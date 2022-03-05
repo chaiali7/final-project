@@ -1,18 +1,17 @@
 import * as React from 'react';
 import { Box, TextField } from '@mui/material';
-import './TextInput.css';
 
-export default function TextInput() {
+export default function FullWidthTextField() {
   return (
     <Box
-      component="form"
       sx={{
-        '& > :not(style)': { m: 1, width: '25ch' },
+        display: 'flex',
+        width: 500,
+        maxWidth: '100%',
+        margin: 3
       }}
-      noValidate
-      autoComplete="off"
     >
-      <TextField id="outlined-basic" label="Enter City or Zipcode" variant="outlined" />
+    <TextField fullWidth label="Enter City or Zipcode" id="fullWidth" />
     </Box>
   );
 }

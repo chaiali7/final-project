@@ -1,15 +1,11 @@
 import React from "react";
-import CommunityCard from './CommunityAdvocacyCard';
-import PetitionCard from "./PetitionCard";
-import PoliticianCard from "./PoliticianCard";
+import Stack from "./Stack"; 
 
+//A page of the different action categories. Users can click from community, politician, or petition related actions.
 function ActionPage() {
   return (
-    <div>
-      <CommunityAdvocacyCard/>
-      <PetitionCard/>
-      <PoliticianCard/>
-    </div>
+    <Stack>
+    </Stack>
   );
 }
 export default ActionPage;

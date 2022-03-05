@@ -1,10 +1,9 @@
 import './App.css';
+import React from 'react';
 import TextInput from './TextInput';
 import TopAppBar from './TopAppBar';
-import CommunityCard from './CommunityCard';
-import PetitionCard from "./PetitionCard";
-import PoliticianCard from "./PoliticianCard";
-//import SuperfundMap from './SuperfundMap';
+import ActionPage from './ActionPage';
+import Map from './Map'
 
 function App() {
   return (
@@ -12,11 +11,9 @@ function App() {
       <header className="Header">
       </header>
       <TopAppBar/>
+      <Map/>
       <TextInput/>
-      
-      <CommunityCard/>
-      <PetitionCard/>
-      <PoliticianCard/>
+      <ActionPage/>
     </div>
   );
 }

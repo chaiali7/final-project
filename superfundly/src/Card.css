@@ -1,0 +1,8 @@
+.Card {
+  text-align: right;
+  display: flex; 
+}
+
+.flex-container {
+  flex-direction: column;
+}

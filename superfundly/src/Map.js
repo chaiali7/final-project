@@ -1,33 +1,47 @@
-/* import * as React from 'react';
-import GoogleMapReact from 'google-map-react';
-import key from '/key.js';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
-
-export default function SimpleMap(){
-  const defaultProps = {
-    center: {
-      lat: 10.99835602,
-      lng: 77.01502627
-    },
-    zoom: 11
-  };
-
+import React, { useRef, useEffect, useState } from 'react';
+import mapboxgl from 'mapbox-gl'; //remove !
+import {Map, Marker} from "react-map-gl"; 
+ 
+mapboxgl.accessToken = 'pk.eyJ1IjoiY2hhaWFsaTciLCJhIjoiY2wwYml2OGJpMHhtcDNjbnR4bDNndDJkeSJ9.gOAKZTDvJzyQiMmH2UA_vQ';
+ 
+export default function SuperfundMap() {
+  const mapContainer = useRef(null);
+  const map = useRef(null);
+  const [lng, setLng] = useState(-70.9);
+  const [lat, setLat] = useState(42.35);
+  const [zoom, setZoom] = useState(9);
+  
+  useEffect(() => {
+    if (map.current) return; // initialize map only once
+    map.current = new mapboxgl.Map({
+    container: mapContainer.current,
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [lng, lat],
+    zoom: zoom
+    });
+    });
+  
+  useEffect(() => {
+    if (!map.current) return; // wait for map to initialize
+      map.current.on('move', () => {
+      setLng(map.current.getCenter().lng.toFixed(4));
+      setLat(map.current.getCenter().lat.toFixed(4));
+      setZoom(map.current.getZoom().toFixed(2));
+      });
+  });
+ 
   return (
-    // Important! Always set the container height explicitly
-    <div style={{ height: '100vh', width: '100%' }}>
-      <GoogleMapReact
-        bootstrapURLKeys={{ key: key }} //find API key + remove bottom nav bar
-        defaultCenter={defaultProps.center}
-        defaultZoom={defaultProps.zoom}
-      >
-        <AnyReactComponent
-          lat={59.955413}
-          lng={30.337844}
-          text="My Marker"
-        />
-      </GoogleMapReact>
+    <div>
+      <div className="sidebar">
+        Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
+      </div>
+      <Map
+      latitude= {lng}
+      longitude= {lat}
+      zoom= {zoom}
+      style = {{width: 500, height: 400}}>
+      </Map>
     </div>
-  );
+    );
 }
-*/
