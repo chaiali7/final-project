@@ -1,17 +1,30 @@
 import * as React from 'react';
-import { Box, TextField } from '@mui/material';
+import FormControl, { useFormControl } from '@mui/material/FormControl';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import Box from '@mui/material/Box';
+import FormHelperText from '@mui/material/FormHelperText';
 
-export default function FullWidthTextField() {
+function MyFormHelperText() {
+  const { focused } = useFormControl() || {};
+
+  const helperText = React.useMemo(() => {
+    if (focused) {
+      return 'This field is being focused';
+    }
+
+    return 'Press Enter';
+  }, [focused]);
+
+  return <FormHelperText>{helperText}</FormHelperText>;
+}
+
+export default function UseFormControl() {
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        width: 500,
-        maxWidth: '100%',
-        margin: 3
-      }}
-    >
-    <TextField fullWidth label="Enter City or Zipcode" id="fullWidth" />
+    <Box component="form" noValidate autoComplete="off" position ="flex">
+      <FormControl sx={{ width: '55ch', padding: 3}}>
+        <OutlinedInput placeholder="Search for initiatives" />
+        <MyFormHelperText />
+      </FormControl>
     </Box>
   );
 }

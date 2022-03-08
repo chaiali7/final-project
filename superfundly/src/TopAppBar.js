@@ -10,11 +10,14 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import {AccountCircle, Favorite, LocationOn} from '@mui/icons-material';
+import { lightGreen} from '@mui/material/colors';
+import "./TopAppBar.css"; 
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
+  const primary = lightGreen[200]; // #c5e1a5
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -75,8 +78,8 @@ export default function PrimarySearchAppBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton size="large" aria-label="show 4 favorites" color="inherit">
-          <Badge badgeContent={4} color="error">
+        <IconButton size="large" aria-label="show 3 favorites" color="inherit">
+          <Badge badgeContent={3} color="error">
             <Favorite />
           </Badge>
         </IconButton>
@@ -88,7 +91,7 @@ export default function PrimarySearchAppBar() {
           aria-label="show locations"
           color="inherit"
         >
-          <Badge badgeContent={17} color="error">
+          <Badge badgeContent={7} color="error">
             <LocationOn />
           </Badge>
         </IconButton>
@@ -112,7 +115,7 @@ export default function PrimarySearchAppBar() {
   // removed search bar from top navigation bar
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" style ={{backgroundColor: primary, color: "black"}}>
         <Toolbar>
           <IconButton
             size="large"
@@ -129,7 +132,9 @@ export default function PrimarySearchAppBar() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
+            <div class="header">
             Superfundly
+            </div>
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
@@ -140,10 +145,10 @@ export default function PrimarySearchAppBar() {
             </IconButton>
             <IconButton
               size="large"
-              aria-label="show 17 new notifications"
+              aria-label="show 7 new notifications"
               color="inherit"
             >
-              <Badge badgeContent={17} color="error">
+              <Badge badgeContent={7} color="error">
                 <LocationOn />
               </Badge>
             </IconButton>

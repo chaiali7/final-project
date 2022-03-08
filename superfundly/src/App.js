@@ -1,18 +1,17 @@
 import './App.css';
 import React from 'react';
-import TextInput from './TextInput';
 import TopAppBar from './TopAppBar';
 import ActionPage from './ActionPage';
-import Map from './Map'
+import Table from './Table';
 
+
+//creates an app with a top navigation bar, data table of superfund sites, and actions cards
 function App() {
   return (
     <div className="App">
-      <header className="Header">
-      </header>
       <TopAppBar/>
-      <Map/>
-      <TextInput/>
+      <Table/>
+      <div class="header">Types of Actions to Take:</div>
       <ActionPage/>
     </div>
   );

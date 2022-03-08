@@ -1,0 +1,6 @@
+.breadcrumb1 {
+  margin: 20px;
+  display: flex; 
+  align-items: right; 
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+}

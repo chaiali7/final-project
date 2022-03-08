@@ -1,5 +1,6 @@
 
-import React, { useRef, useEffect, useState } from 'react';
+//I could not get the mapbox map to work with the data I had because of latitude and longitude unicode errors. 
+/* import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl'; //remove !
 import {Map, Marker} from "react-map-gl"; 
  
@@ -44,4 +45,4 @@ export default function SuperfundMap() {
       </Map>
     </div>
     );
-}
+}*/
