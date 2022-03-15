@@ -4,10 +4,12 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import { Link } from "react-router-dom";
 import './Card.css';
 
 export default function ActionAreaCard() {
   return (
+    <Link  to="/PetitionPage" style={{ textDecoration: 'none' }}>
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardMedia
@@ -26,5 +28,6 @@ export default function ActionAreaCard() {
         </CardContent>
       </CardActionArea>
     </Card>
+    </Link>
   );
 }

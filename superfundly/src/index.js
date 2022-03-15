@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import CommunityPage from "./CommunityPage"; 
+import PoliticianPage from "./PoliticianPage";
+import PetitionPage from "./PetitionPage";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -12,6 +14,8 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element = {<App />} />
         <Route path="/CommunityPage" element = {<CommunityPage />} />
+        <Route path="/PoliticianPage" element = {<PoliticianPage/>} />
+        <Route path="/PetitionPage" element = {<PetitionPage/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

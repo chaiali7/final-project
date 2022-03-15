@@ -24,7 +24,7 @@ export default function ActiveLastBreadcrumb() {
           href="/components/breadcrumbs/"
           aria-current="page"
         >
-          Community Related Actions
+          Contact a Politician
         </Link2>
       </Breadcrumbs>
     </div>

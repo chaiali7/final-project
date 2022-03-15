@@ -7,7 +7,7 @@ import PoliticianCard from "./PoliticianCard";
 export default function BasicStack() {
   return (
     <div>
-      <Stack spacing={4}
+      <Stack spacing={7}
       direction="row"
       justifyContent="flex-start"
       alignItems="flex-start"
