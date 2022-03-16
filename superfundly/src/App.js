@@ -10,6 +10,7 @@ function App() {
   return (
     <div className="App">
       <TopAppBar/>
+      <div class = "header">Superfund site: contaminated sites exist nationally due to hazardous waste being dumped, left out in the open, or otherwise improperly managed (US EPA)</div>
       <Table/>
       <div class="header">Types of Actions to Take:</div>
       <ActionPage/>
